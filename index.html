@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابتك نحو الاحتراف في التداول | Trading & Funding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .lang-btn {
+            background: #1e293b;
+            color: #94a3b8;
+            border: 1px solid #334155;
+            padding: 6px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .lang-btn.active, .lang-btn:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+        }
+        .header-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header-title span {
+            color: #38bdf8;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .header-title h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-top: 10px;
+            color: #f8fafc;
+        }
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 30px;
+            flex: 1;
+            min-width: 280px;
+            max-width: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #475569;
+        }
+        .card h2 {
+            font-size: 22px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            padding: 14px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #0369a1, #075985);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.5);
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- أزرار تغيير اللغة -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLanguage('ar')">العربية</button>
+        <button class="lang-btn" onclick="setLanguage('fr')">Français</button>
+        <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    </div>
+
+    <div class="header-title">
+        <span id="txt-badge">بوابتك نحو الاحتراف في التداول</span>
+        <h1 id="txt-main-title">بمستواك في التداول إلى المستوى التالي</h1>
+    </div>
+
+    <div class="cards-container">
+        <!-- كارت TradingView -->
+        <div class="card">
+            <div>
+                <h2 id="tv-title">منصة التحليل (TradingView)</h2>
+                <p id="tv-desc">حلل الشموع، تتبع السيولة، واستخدم المؤشرات الاحترافية على منصة TradingView الرائدة عالمياً.</p>
+            </div>
+            <!-- رابط الافلييت الخاص بـ TradingView -->
+            <a href="https://www.tradingview.com/black-friday/?aff_id=1173651" class="btn" target="_blank" id="tv-btn">ترقية حسابك الآن ←</a>
+        </div>
+
+        <!-- كارت RebelsFunding -->
+        <div class="card">
+            <div>
+                <h2 id="rf-title">حسابات التمويل (Funded Accounts)</h2>
+                <p id="rf-desc">تجاوز التحديات مع RebelsFunding واحصل على تمويل حقيقي لتداول الفوركس والذهب بأفضل الشروط.</p>
+            </div>
+            <!-- رابط الافلييت الخاص بـ RebelsFunding -->
+            <a href="https://www.rebelsfunding.com/?a_box=smoleb2c&a_cam=3" class="btn" target="_blank" id="rf-btn">احصل على تمويلك الآن ←</a>
+        </div>
+    </div>
+
+    <div class="footer" id="txt-footer">
+        تداول الأصول المالية ينطوي على مخاطر عالية. جميع الحقوق محفوظة.
+    </div>
+
+    <script>
+        const translations = {
+            ar: {
+                dir: "rtl",
+                badge: "بوابتك نحو الاحتراف في التداول",
+                mainTitle: "بمستواك في التداول إلى المستوى التالي",
+                tvTitle: "منصة التحليل (TradingView)",
+                tvDesc: "حلل الشموع، تتبع السيولة، واستخدم المؤشرات الاحترافية على منصة TradingView الرائدة عالمياً.",
+                tvBtn: "ترقية حسابك الآن ←",
+                rfTitle: "حسابات التمويل (Funded Accounts)",
+                rfDesc: "تجاوز التحديات مع RebelsFunding واحصل على تمويل حقيقي لتداول الفوركس والذهب بأفضل الشروط.",
+                rfBtn: "احصل على تمويلك الآن ←",
+                footer: "تداول الأصول المالية ينطوي على مخاطر عالية. جميع الحقوق محفوظة."
+            },
+            fr: {
+                dir: "ltr",
+                badge: "Votre passerelle vers le trading professionnel",
+                mainTitle: "Amenez votre trading au niveau supérieur",
+                tvTitle: "Plateforme d'analyse (TradingView)",
+                tvDesc: "Analysez les graphiques, suivez la liquidité et utilisez des indicateurs professionnels sur TradingView.",
+                tvBtn: "Mettre à niveau votre compte →",
+                rfTitle: "Comptes Financés (Funded Accounts)",
+                rfDesc: "Relevez les défis avec RebelsFunding et obtenez un capital réel pour trader le Forex et l'Or.",
+                rfBtn: "Obtenez votre financement →",
+                footer: "Le trading d'actifs financiers comporte des risques élevés. Tous droits réservés."
+            },
+            en: {
+                dir: "ltr",
+                badge: "Your Gateway to Professional Trading",
+                mainTitle: "Take Your Trading to the Next Level",
+                tvTitle: "Analysis Platform (TradingView)",
+                tvDesc: "Analyze charts, track liquidity, and use advanced professional indicators on the world-leading TradingView platform.",
+                tvBtn: "Upgrade Your Account Now →",
+                rfTitle: "Funded Accounts",
+                rfDesc: "Pass challenges with RebelsFunding and get funded with real capital to trade Forex and Gold under the best conditions.",
+                rfBtn: "Get Funded Now →",
+                footer: "Trading financial assets carries high risks. All rights reserved."
+            }
+        };
+
+        function setLanguage(lang) {
+            const t = translations[lang];
+            document.getElementById('html-root').setAttribute('lang', lang);
+            document.getElementById('html-root').setAttribute('dir', t.dir);
+
+            document.getElementById('txt-badge').innerText = t.badge;
+            document.getElementById('txt-main-title').innerText = t.mainTitle;
+            document.getElementById('tv-title').innerText = t.tvTitle;
+            document.getElementById('tv-desc').innerText = t.tvDesc;
+            document.getElementById('tv-btn').innerText = t.tvBtn;
+            document.getElementById('rf-title').innerText = t.rfTitle;
+            document.getElementById('rf-desc').innerText = t.rfDesc;
+            document.getElementById('rf-btn').innerText = t.rfBtn;
+            document.getElementById('txt-footer').innerText = t.footer;
+
+            // تحديث تصميم الأزرار النشطة
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+  </html>
+  
